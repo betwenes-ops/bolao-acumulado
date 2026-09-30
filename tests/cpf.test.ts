@@ -1,0 +1,1 @@
+import{describe,it,expect}from"vitest";import{cpfValido}from"@/lib/cpf";describe("CPF",()=>{it("rejeita repetidos",()=>expect(cpfValido("11111111111")).toBe(false));it("aceita valido",()=>expect(cpfValido("529.982.247-25")).toBe(true));it("rejeita digito invalido",()=>expect(cpfValido("52998224724")).toBe(false))});

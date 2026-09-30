@@ -1,0 +1,1 @@
+export default function Sorteios(){return <main className="shell"><div className="brand">Últimos sorteios</div><h1 className="title">Concursos apurados</h1><div className="card"><p className="lead">Os resultados lançados pelo administrador aparecerão aqui.</p></div></main>}
