@@ -1,0 +1,1 @@
+-- Applied migration marker. Hardens SECURITY DEFINER helpers and revokes direct RPC execution.
