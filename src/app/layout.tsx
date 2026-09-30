@@ -5,5 +5,6 @@ import "./admin.css";
 import "./client.css";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-admin" });
+export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "Bolão Acumulado", description: "Bolão acumulado da Mega-Sena" };
 export default function RootLayout({ children }: { children: React.ReactNode }) { return <html lang="pt-BR" className={geist.variable}><body>{children}</body></html>; }
