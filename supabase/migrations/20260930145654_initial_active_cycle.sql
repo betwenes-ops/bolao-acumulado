@@ -1,0 +1,1 @@
+-- Applied migration marker. Creates the initial active prize cycle when none exists.
