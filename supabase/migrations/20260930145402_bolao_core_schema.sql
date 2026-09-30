@@ -1,0 +1,4 @@
+-- Applied to Supabase project rkmdyzztklerlzesraod.
+-- Core schema: usuarios, admins, ciclos, concursos, jogos, apuracoes, ganhadores,
+-- configuracoes and auditoria. RLS is enabled on all public tables.
+-- Source of truth is the migration history in the connected Supabase project.
