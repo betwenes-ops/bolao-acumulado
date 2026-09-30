@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import "./admin.css";
+import "./client.css";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-admin" });
 export const metadata: Metadata = { title: "Bolão Acumulado", description: "Bolão acumulado da Mega-Sena" };
