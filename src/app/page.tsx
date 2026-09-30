@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function Home(){return <main className="shell"><div className="brand">Bolão Acumulado</div><h1 className="title">Seu bolão, de um jeito simples.</h1><p className="lead">Entre com seu CPF e PIN para acompanhar seus jogos e o prêmio acumulado.</p><div className="card"><div className="grid"><Link className="bigButton" href="/login">Entrar</Link><Link className="bigButton secondary" href="/cadastro">Quero me cadastrar</Link></div></div><p className="muted">Área administrativa: <Link href="/admin">/admin</Link></p></main>}

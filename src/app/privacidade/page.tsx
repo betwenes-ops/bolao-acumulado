@@ -1,0 +1,1 @@
+export default function Privacidade(){return <main className="shell"><h1 className="title">Política de privacidade</h1><p className="lead">Coletamos apenas os dados necessários ao cadastro e à operação. O CPF não é exibido a outros clientes. Solicitações LGPD serão tratadas preservando registros cuja retenção seja necessária.</p></main>}

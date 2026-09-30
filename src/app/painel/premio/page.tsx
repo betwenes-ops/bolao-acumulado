@@ -1,0 +1,1 @@
+export default function Premio(){return <main className="shell"><div className="brand">Prêmio</div><div className="card"><div className="muted">Prêmio acumulado atual</div><div className="prize">R$ 0,00</div><p className="lead">Ciclo 1 - aguardando concursos</p></div></main>}

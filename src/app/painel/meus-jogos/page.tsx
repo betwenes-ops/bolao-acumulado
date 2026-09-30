@@ -1,0 +1,1 @@
+export default function MeusJogos(){return <main className="shell"><div className="brand">Meus jogos</div><h1 className="title">Seus jogos</h1><div className="card"><p className="lead">Você ainda não tem jogos cadastrados.</p></div></main>}

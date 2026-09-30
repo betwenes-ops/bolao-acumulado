@@ -1,0 +1,1 @@
+export default function Termos(){return <main className="shell"><h1 className="title">Termos de uso</h1><p className="lead">Modelo inicial sujeito a revisão jurídica antes da operação real.</p></main>}
