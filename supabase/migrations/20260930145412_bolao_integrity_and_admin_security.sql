@@ -1,0 +1,2 @@
+-- Applied migration marker. Adds game integrity checks, admin authorization helpers,
+-- admin RLS policies and immutable confirmed-game protections.
