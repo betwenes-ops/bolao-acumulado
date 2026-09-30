@@ -1,0 +1,1 @@
+-- Applied migration marker. Adds covering indexes for foreign keys and operational queries.
