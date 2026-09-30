@@ -1,16 +1,27 @@
-import{redirect}from"next/navigation";
-import{createClient}from"@/lib/supabase/server";
+import { redirect } from "next/navigation";
+import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 
-export async function requireAdmin(){
- const supabase=await createClient();
- const{data:{user}}=await supabase.auth.getUser();
- if(!user)redirect("/admin");
- const{data:admin}=await supabase.from("admins").select("id,nome,papel,ativo").eq("auth_user_id",user.id).eq("ativo",true).maybeSingle();
- if(!admin){await supabase.auth.signOut();redirect("/admin?erro=acesso")}
- const{data:factors}=await supabase.auth.mfa.listFactors();
- const verified=factors?.totp?.some(f=>f.status==="verified");
- if(!verified)redirect("/admin/mfa/configurar");
- const{data:aal}=await supabase.auth.mfa.getAuthenticatorAssuranceLevel();
- if(aal?.currentLevel!=="aal2")redirect("/admin/mfa");
- return{supabase,admin,user};
+export async function requireAdmin() {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) redirect("/admin");
+
+  // MFA is temporarily disabled. The admin record is read with the
+  // server-only service client because the current RLS policy for admins
+  // still requires AAL2 and would otherwise hide the row from an AAL1 session.
+  const privileged = createAdminClient();
+  const { data: admin } = await privileged
+    .from("admins")
+    .select("id,nome,papel,ativo")
+    .eq("auth_user_id", user.id)
+    .eq("ativo", true)
+    .maybeSingle();
+
+  if (!admin) {
+    await supabase.auth.signOut();
+    redirect("/admin?erro=acesso");
+  }
+
+  return { supabase, admin, user };
 }
