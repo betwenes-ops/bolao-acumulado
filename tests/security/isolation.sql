@@ -1,0 +1,8 @@
+-- Executar em ambiente de teste com dois auth.uid() distintos.
+-- Objetivo: provar que políticas RLS nunca retornam recursos do outro cliente.
+-- Cliente A: SELECT usuarios => somente seu perfil.
+-- Cliente A: SELECT jogos => somente jogos cujo usuario_id pertence ao seu auth.uid().
+-- Cliente A: SELECT apuracoes => somente apurações dos seus jogos.
+-- Cliente A: SELECT ganhadores => somente prêmios dos seus jogos.
+-- Tabelas admins, auditoria e configuracoes não possuem acesso direto do cliente.
+-- As operações de escrita críticas passam exclusivamente por ações server-side autorizadas.
