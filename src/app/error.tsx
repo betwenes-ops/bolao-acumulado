@@ -1,1 +1,3 @@
-"use client";export default function ErrorPage({reset}:{error:Error&{digest?:string};reset:()=>void}){return <main className="fatalError"><div className="logoMark">6</div><h1>Algo não carregou</h1><p>Não se preocupe. Seus dados não foram apagados. Tente carregar novamente.</p><button className="bigButton" onClick={()=>reset()}>Tentar novamente</button><a href="/">Voltar ao início</a></main>}
+"use client";
+import Link from "next/link";
+export default function ErrorPage({reset}:{error:Error&{digest?:string};reset:()=>void}){return <main className="fatalError"><div className="logoMark">6</div><h1>Algo não carregou</h1><p>Não se preocupe. Seus dados não foram apagados. Tente carregar novamente.</p><button className="bigButton" onClick={()=>reset()}>Tentar novamente</button><Link href="/">Voltar ao início</Link></main>}
